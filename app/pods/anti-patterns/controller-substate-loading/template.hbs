@@ -1,32 +1,58 @@
 <h2>Controller Substate</h2>
 
 {{#if isLoaded}}
-  Handling loading in the Controller is an anti-pattern
+Handling loading in the Controller is an anti-pattern
 {{else}}
-  <h3>Loading....</h3>
+<h3>Loading....</h3>
 {{/if}}
 
+<h4>Better Patterns</h4>
+
+{{#link-to "patterns.substate-loading"}}substate loading{{/link-to}}
+{{#link-to "patterns.substate-error"}}substate error{{/link-to}}
+
 <PatternExplanation @showText="Explain why loading in the controller sucks">
-  beyond muddying responsibilities, controllers were not designed to handle data the same way as routes.
-  One of Ember's gotchas for beginners is:
+  <p>
+    The biggest reason not to do this is that Ember gives you this functionality for free.
+    Check out the {{#link-to "patterns.substate-loading"}}substate loading{{/link-to}}
+    and {{#link-to "patterns.substate-error"}}substate error{{/link-to}} patterns for a better, DRYer way to handle
+    these states.
+  </p>
+  <blockquote>
+    You are using Ember, so you might as well USE EMBER! ;-)
+  </blockquote>
+  <p>
+    Beyond doubling functionality, controllers actually handle data fundamentally different from routes.
+    One of Ember's biggest gotchas for beginners is: Controllers are singletons!
+  </p>
 
-  <h4>Controllers are singletons</h4>
-  this means that once the controller is initialized, it will never re-initialize
-  if you navigate away and back, isLoaded will always be true.
-  the functions in Init will never fire again unless you refresh the page.
+  <h4>Who cares about singletons?</h4>
+  <p>
+    The fact that a Controller is a singleton meanns that when it is initialized, it will not re-initialize when you
+    come back to it.
+    Click another link and come back, the <code>isLoaded</code> state in the controller will always be true.
+    the functions in Init will never fire again unless you refresh the page.
+    You data changed and you want to know in real time like anybody would?
+    Routes are designed for that.
+  </p>
 
-  <h4>Use Routes and Models for data loading and modifying Data</h4>
-  loading data is just one of the things you <i>could</i> do with data in controllers.
+  <h4>Use Routes and Models for data stuff</h4>
+  loading state management is just one of the many things you <b>could</b> do in a controller that you definitely
+  shouldn't.
   Ember provides a lot of awesome data helpers directly on the model which will make your life hella easier.
+
+  TODO link model and route patterns when ready
 
   <h4>Global Pattern Percpective</h4>
   <p>
-  this part of bigger pattern of moving model related function out of controller or component.
-  Every major framework is going in a component direction Make as stateless as possible.  
-  controllers will soon be removed from Ember cause they are pointless beasts of burden.
-  Controllers can do things that components can not, but nothing that it SHOULD be allowed to do if good patterns are established.
+    this part of bigger pattern of moving model related function out of controller or component.
+    Every major framework is going in a component direction Make as stateless as possible.
+    controllers will soon be removed from Ember cause they are pointless beasts of burden.
+    Controllers can do things that components can not, but nothing that it SHOULD be allowed to do if good patterns are
+    established.
+  </p>
 
   <h4>Further Reading</h4>
-  LINK APPLICABLE GLOBAL RULES HERE. For example: Getting High with State 
-  </p>
+  LINK APPLICABLE GLOBAL RULES HERE. For example: Getting High with State
+  LINK ARTICLES HERE AS WELL
 </PatternExplanation>

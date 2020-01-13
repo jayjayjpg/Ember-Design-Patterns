@@ -7,17 +7,17 @@ export default {
   },
   general: [
     {
-      // Use angle brackets as much as possible when using components. This makes Angular and React developer's dicks super hard
-      title: 'Angle brackets keep Ember sexy',
-      // link: 'general.angle-brackets'
+      title: 'Ember CLI FTW',
+      // link: 'general.cli'
     },
     {
       title: 'Handle data while high',
       // link: 'general.data'
     },
     {
-      title: 'Ember CLI FTW',
-      // link: 'general.cli'
+      // Use angle brackets as much as possible when using components. This makes Angular and React developer's dicks super hard
+      title: 'Angle brackets keep Ember sexy',
+      // link: 'general.angle-brackets'
     },
     {
       title: 'You probably need a Util and not a Service',

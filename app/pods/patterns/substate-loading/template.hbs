@@ -4,4 +4,21 @@
 
 <button {{action 'reload'}}>reload</button>
 
+<PatternExplanation @showText="Why this is waaaaaay better">
+  <p>
+    Ember gives you this functionality for free so less code needs to be written
+  </p>
+  <p>
+    You can share loading state with many different reoutes which is desired by most UX standards
+  </p>
+  <p>
+    Controllers are going bye-bye any day now.
+  </p>
+
+  <h4>Further Reading</h4>
+  LINK APPLICABLE GLOBAL RULES HERE. For example: Getting High with State
+
+  <h4>Related Anti-Patters</h4>
+  {{#link-to "anti-patterns.controller-substate-loading"}}tracking loading in the controller{{/link-to}}
+</PatternExplanation>
 {{outlet}}
