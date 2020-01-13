@@ -1,26 +1,30 @@
 import { module, test } from 'qunit';
 import { setupRenderingTest } from 'ember-qunit';
-import { render } from '@ember/test-helpers';
+import { render, findAll } from '@ember/test-helpers';
 import hbs from 'htmlbars-inline-precompile';
+
+const items = [
+  {
+    link: 'test',
+    title: 'jazz'
+  },
+  {
+    link: 'test2',
+    title: 'jazz2'
+  }
+]
 
 module('Integration | Component | link-list', function(hooks) {
   setupRenderingTest(hooks);
 
   test('it renders', async function(assert) {
-    // Set any properties with this.set('myProperty', 'value');
-    // Handle any actions with this.set('myAction', function(val) { ... });
+    assert.expect(3);
 
-    await render(hbs`{{link-list}}`);
+    this.set('items', items)
+    await render(hbs`<LinkList @items={{this.items}}/>`);
 
-    assert.equal(this.element.textContent.trim(), '');
-
-    // Template block usage:
-    await render(hbs`
-      {{#link-list}}
-        template block text
-      {{/link-list}}
-    `);
-
-    assert.equal(this.element.textContent.trim(), 'template block text');
+    assert.dom('[data-test-link-list-container]').exists()
+    assert.equal(findAll('[data-test-link-list-entry]').length, items.length)
+    assert.dom('[data-test-link-list-entry]').hasText('jazz')
   });
 });

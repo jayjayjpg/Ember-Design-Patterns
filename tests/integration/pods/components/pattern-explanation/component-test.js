@@ -1,26 +1,44 @@
 import { module, test } from 'qunit';
 import { setupRenderingTest } from 'ember-qunit';
-import { render } from '@ember/test-helpers';
+import { render, click } from '@ember/test-helpers';
 import hbs from 'htmlbars-inline-precompile';
 
 module('Integration | Component | pattern-explanation', function(hooks) {
   setupRenderingTest(hooks);
 
   test('it renders', async function(assert) {
-    // Set any properties with this.set('myProperty', 'value');
-    // Handle any actions with this.set('myAction', function(val) { ... });
+    assert.expect(1)
 
-    await render(hbs`{{pattern-explanation}}`);
+    await render(hbs`<PatternExplanation>Jazz</PatternExplanation>`);
+
+    assert.equal(this.element.textContent.trim(), 'Show');
+
+  });
+
+  test('it doesn\'t render if no yield is given', async function(assert) {
+    assert.expect(1)
+
+    await render(hbs`<PatternExplanation/>`);
 
     assert.equal(this.element.textContent.trim(), '');
 
-    // Template block usage:
+  });
+
+  test('it opens when show button is clicked and closed when clicked again', async function(assert) {
+    assert.expect(2)
+
     await render(hbs`
-      {{#pattern-explanation}}
+      <PatternExplanation>
         template block text
-      {{/pattern-explanation}}
+      </PatternExplanation>
     `);
 
-    assert.equal(this.element.textContent.trim(), 'template block text');
+    await click('button')
+
+    assert.dom('[data-test-explanation]').hasText('template block text');
+
+    await click('button')
+
+    assert.dom('[data-test-explanation]').doesNotExist()
   });
 });
