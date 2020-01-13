@@ -7,6 +7,13 @@ const Router = EmberRouter.extend({
 });
 
 Router.map(function() {
+  this.route('patterns', function() {
+    this.route('substate-error');
+    this.route('substate-loading');
+  });
+  this.route('anti-patterns', function() {
+    this.route('controller-substate-loading');
+  });
 });
 
 export default Router;

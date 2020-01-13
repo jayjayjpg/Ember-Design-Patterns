@@ -1,0 +1,13 @@
+<nav>
+{{#each items as | item |}}
+  <li>
+    {{#if item.link}}
+      {{#link-to item.link}}
+      {{item.title}}
+      {{/link-to}}
+    {{else}}
+      Coming Soon: {{item.title}}
+    {{/if}}
+  </li>
+{{/each}}
+</nav>

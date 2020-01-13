@@ -3,9 +3,11 @@
 module.exports = function(environment) {
   let ENV = {
     modulePrefix: 'design-patterns',
-    environment,
+    podModulePrefix: 'design-patterns/pods',
+    environment: environment,
     rootURL: '/',
     locationType: 'auto',
+    
     EmberENV: {
       FEATURES: {
         // Here you can enable experimental features on an ember canary build

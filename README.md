@@ -1,5 +1,8 @@
 # design-patterns
 
+This is a tiny app to show effective and ineffective patterns when building software applications using Ember.
+
+
 This README outlines the details of collaborating on this Ember application.
 A short introduction of this app could easily go here.
 
@@ -55,3 +58,41 @@ Specify what it takes to deploy your app.
 * Development Browser Extensions
   * [ember inspector for chrome](https://chrome.google.com/webstore/detail/ember-inspector/bmdblncegkenkacieihfhpjfppoconhi)
   * [ember inspector for firefox](https://addons.mozilla.org/en-US/firefox/addon/ember-inspector/)
+
+
+
+# Content
+
+## Pattern 1 - User Pods
+
+better encapsulation of concerns
+used with any other js framework
+classic is kept for largely legacy reasons
+
+we'll use pods for everything from now on.
+see see https://cli.emberjs.com/release/advanced-use/project-layouts/
+
+```
+// .ember-cli
+  "usePods": true
+```
+
+```
+// config/environment.js
+let ENV = {
+    modulePrefix: 'my-new-app',
+    // namespaced directory where resolver will look for your resource files
+    podModulePrefix: 'my-new-app/pods',
+    environment: environment,
+    rootURL: '/',
+    locationType: 'auto'
+    //...
+  };
+```
+
+todo: add more stuffs here
+
+## Pattern 2 - Loading and Error Substates
+
+
+## AntiPattern 2a - loading and error logic in controller

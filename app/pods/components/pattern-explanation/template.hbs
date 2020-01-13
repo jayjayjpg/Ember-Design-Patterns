@@ -1,0 +1,6 @@
+{{#if isShowingExplanation}}
+<button {{action 'toggleExplanation'}}>{{#if hideText}}{{hideText}}{{else}}Hide{{/if}}</button>
+  {{yield}}
+{{else}}
+<button {{action 'toggleExplanation'}}>{{#if showText}}{{showText}}{{else}}Show{{/if}}</button>
+{{/if}}
