@@ -3,7 +3,7 @@ import { later } from '@ember/runloop';
 
 export default Route.extend({
   model() {
-    return new Promise(function(resolve, reject) {
+    return new Promise(function(resolve) {
       later((function() {
         resolve('I am Loaded')
       }), 1500);

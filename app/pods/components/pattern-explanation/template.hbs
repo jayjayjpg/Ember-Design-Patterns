@@ -1,10 +1,10 @@
 {{#if (has-block)}}
-{{#if isShowingExplanation}}
-<button data-test-show {{action 'toggleExplanation'}}>{{#if hideText}}{{hideText}}{{else}}Hide{{/if}}</button>
-<div data-test-explanation>
-  {{yield}}
-</div>
-{{else}}
-<button data-test-hide {{action 'toggleExplanation'}}>{{#if showText}}{{showText}}{{else}}Show{{/if}}</button>
-{{/if}}
+  {{#if isShowingExplanation}}
+    <button data-test-show {{action "toggleExplanation"}}>{{#if hideText}}{{hideText}}{{else}}Hide{{/if}}</button>
+    <div data-test-explanation>
+      {{yield}}
+    </div>
+  {{else}}
+    <button data-test-hide {{action "toggleExplanation"}}>{{#if showText}}{{showText}}{{else}}Show{{/if}}</button>
+  {{/if}}
 {{/if}}

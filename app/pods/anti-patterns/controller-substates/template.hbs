@@ -1,10 +1,8 @@
-<h2>Controller Substate</h2>
+<h2>Controller Substates</h2>
 
-{{#if isLoaded}}
-Handling loading in the Controller is an anti-pattern
-{{else}}
-<h3>Loading....</h3>
-{{/if}}
+<h3>{{if isLoaded "Data is loaded" "Loading...."}}</h3>
+
+<h3>{{if isError "Data is an error" "is error? ...."}}</h3>
 
 <h4>Better Patterns</h4>
 

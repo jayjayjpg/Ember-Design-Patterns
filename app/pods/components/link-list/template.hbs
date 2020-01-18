@@ -1,13 +1,13 @@
 <nav data-test-link-list-container>
-{{#each items as | item |}}
-  <li data-test-link-list-entry>
-    {{#if item.link}}
-      {{#link-to item.link}}
-        {{item.title}}
-      {{/link-to}}
-    {{else}}
-      Coming Soon: {{item.title}}
-    {{/if}}
-  </li>
-{{/each}}
+  {{#each items as | item |}}
+    <li data-test-link-list-entry>
+      {{#if item.link}}
+        {{#link-to item.link}}
+          {{item.title}}
+        {{/link-to}}
+      {{else}}
+        Coming Soon: {{item.title}}
+      {{/if}}
+    </li>
+  {{/each}}
 </nav>
