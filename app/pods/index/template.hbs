@@ -1,23 +1,28 @@
 <h2>How to use this guide</h2>
 <p>
-  Althought there are detailed explanations of patterns on these pages,
-  for the love of god, please look at the code in the repo.
-  These patterns are first and foremost apparent in code which is why I made this guide in the first place.
-  The code also has a lot of comments which are meant to be entertaining and informative for those who read code.
-  There is a lot of swearing in there too so have fun!
+  This guide is for groups of coders who wish to unify their ember programming styles.
+  This in turn will ease code readability and the speed up development and debugging processes.
+  Although there are detailed explanations of each pattern on their respective page,
+  please look at the code in the repo to understand what is happening.
 </p>
 <p>
-  The General Guidelines section is meant to give background and perspective for patterns as well as explain concepts that are not highly visible in code.
   The Patterns and Anti-Pattern sections are meant to be clear and concise examples of best and worst practices in regards to Ember development
+  The General Guidelines section is meant to give background and perspective for patterns as well as explain concepts that are not highly visible in code.
 </p>
 
-<h2>General Guidelines</h2>
-<LinkList @items={{model.general}}></LinkList>
+<section class="pb-4">
+  <h2>Patterns</h2>
+  <LinkList @items={{model.patterns}}></LinkList>
+</section>
 
-<h2>Patterns</h2>
-<LinkList @items={{model.patterns}}></LinkList>
+<section class="pb-4">
+  <h2>Anti-Patterns</h2>
+  <LinkList @items={{model.anti_patterns}}></LinkList>
+</section>
 
-<h2>Anti-Patterns</h2>
-<LinkList @items={{model.anti_patterns}}></LinkList>
+<section class="pb-4">
+  <h2>General Guidelines</h2>
+  <LinkList @items={{model.general}}></LinkList>
+</section>
 
 {{outlet}}

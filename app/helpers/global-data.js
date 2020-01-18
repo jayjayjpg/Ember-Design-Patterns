@@ -3,7 +3,7 @@
 
 export default {
   app: {
-    title: "Ember Patterns"
+    title: "Ember Design Patterns"
   },
   general: [
     {
@@ -33,11 +33,11 @@ export default {
   ],
   patterns: [
     {
-      title: 'Irie Error Handling',
+      title: 'Error States',
       link: 'patterns.substate-error'
     },
     {
-      title: 'Piece of Cake Loading',
+      title: 'Loading States',
       link: 'patterns.substate-loading'
     },
     {
