@@ -1,0 +1,12 @@
+<h2>Reusable Components</h2>
+{{#amount-incrementor 
+  amount=50 
+  onAmountIncrement=(action send "routeAction")
+}}{{/amount-incrementor}}
+
+<PatternExplanation @showText="But why?">
+  Pure data down, actions up<br>
+  passes initial data as individual, configurable properties<br>
+  exposes an action to be handled in the calling context<br>
+  Thank you Dianne Eramo for <a href="https://youtu.be/Kyd2mQpR_9c?t=377">your talk at EmberConf 2019</a>
+</PatternExplanation>

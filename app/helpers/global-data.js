@@ -7,29 +7,31 @@ export default {
   },
   general: [
     {
-      title: 'Ember CLI FTW',
-      // link: 'general.cli'
-    },
-    {
-      title: 'Handle data while high',
-      // link: 'general.data'
-    },
-    {
-      // Use angle brackets as much as possible when using components. This makes Angular and React developer's dicks super hard
-      title: 'Angle brackets keep Ember sexy',
+      title: 'Use Pods',
       // link: 'general.angle-brackets'
     },
     {
-      title: 'You probably need a Util and not a Service',
+      title: 'Use Angle brackets',
+      // link: 'general.angle-brackets'
+    },
+    {
+      title: 'You probably don\'t need a Service',
       // link: 'general.utils'
     },
     {
       title: 'Models make Ember Great',
       // has dirty attributes
       // rollback
-      // link: 'general.utils'
+      // link: 'general.models'
     },
+    {
+      title: 'Component Patterns overview'
+      // Single responsibility
+      // Dont repeat yourself
+      // Dont abstract too early
 
+
+    }
   ],
   patterns: [
     {
@@ -41,17 +43,24 @@ export default {
       link: 'patterns.substate-loading'
     },
     {
-      title: 'Component - Renderless',
+      title: 'Reusable Component Pattern',
+      link: 'patterns.component.reusable'
+    },
+    {
+      title: 'Container Components',
+      // link: 'patterns.component.container'
+    },
+    {
+      title: 'Renderless Components',
       // link: 'patterns.component.renderless'
     },
     {
-      title: 'Component - Data Provider',
-      // type of Renderless
-      // link: 'patterns.component.data-provider'
+      title: 'Presentaional Components',
+      // link: 'patterns.component.stateless'
     },
     {
-      title: 'Component - Stateless',
-      // link: 'patterns.component.stateless'
+      title: 'HOC',
+      // link: 'patterns.component.hoc'
     },
     {
       title: 'Mixins - Fully Encapsulated',
@@ -68,6 +77,10 @@ export default {
     {
       title: 'Model - Control Z!',
       // link: 'patterns.model.rollback'
+    },
+    {
+      title: 'Ember Concurrency',
+      // link: 'patterns.concurrency'
     },
   ],
   anti_patterns: [

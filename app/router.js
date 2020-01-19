@@ -10,10 +10,15 @@ Router.map(function() {
   this.route('patterns', function() {
     this.route('substate-error');
     this.route('substate-loading');
+    this.route('component', function() {
+      this.route('reusable');
+      this.route('single-purpose');
+    });
   });
   this.route('anti-patterns', function() {
     this.route('controller-substate-loading');
   });
+
 });
 
 export default Router;
