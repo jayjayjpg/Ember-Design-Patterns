@@ -47,6 +47,10 @@ export default {
       link: 'patterns.component.reusable'
     },
     {
+      title: 'Single Purpose Component Pattern',
+      link: 'patterns.component.single-purpose'
+    },
+    {
       title: 'Container Components',
       // link: 'patterns.component.container'
     },
