@@ -9,10 +9,16 @@ export default Component.extend({
   }),
 
   wholeStars: computed('roundedDownRating', function() {
+    if (this.roundedDownRating < 0) {
+      return new Array(0);
+    }
     return new Array(this.roundedDownRating);
   }),
 
   hasHalfStar: computed('roundedDownRating', function() {
+    if (this.roundedDownRating <= 0) {
+      return false;
+    }
     return (this.rating - this.roundedDownRating) >= 0.5;
   })
 });

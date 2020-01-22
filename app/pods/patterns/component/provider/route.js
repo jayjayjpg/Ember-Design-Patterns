@@ -16,7 +16,7 @@ export default Route.extend({
     updateCurrentHires(newAmount) {
       this.currentHires = newAmount
     },
-    updateTotalYearlyHires(newAmount) {
+    updateYearlyHiringGoal(newAmount) {
       this.totalYearlyHires = newAmount
     },
   }

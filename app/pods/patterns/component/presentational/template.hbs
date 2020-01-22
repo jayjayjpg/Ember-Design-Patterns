@@ -1,7 +1,13 @@
 {{outlet}}
 <h2>Presenational Component Pattern</h2>
 
-<RatingStars @rating="3" />
+<h3>Rating Stars example</h3>
+<RatingStars @rating={{model.rating}} />
+<AmountIncrementor @amount={{model.rating}} @stepSize="0.5" />
+
+<h3>Progress Bar Example</h3>
+<ProgressBar @percentComplete={{model.percentComplete}} />
+<AmountIncrementor @amount={{model.percentComplete}} @stepSize="5" />
 
 <PatternExplanation>
   Thank you Dianne Eramo her <a href="https://youtu.be/Kyd2mQpR_9c?t=868">your talk at EmberConf 2019</a>
