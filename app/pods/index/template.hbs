@@ -12,17 +12,17 @@
 
 <section class="pb-4">
   <h2>Patterns</h2>
-  <LinkList @items={{model.patterns}}></LinkList>
+  <LinkList @items={{model.sections.patterns}}></LinkList>
 </section>
 
 <section class="pb-4">
   <h2>Anti-Patterns</h2>
-  <LinkList @items={{model.anti_patterns}}></LinkList>
+  <LinkList @items={{model.sections.anti_patterns}}></LinkList>
 </section>
 
 <section class="pb-4">
   <h2>General Guidelines</h2>
-  <LinkList @items={{model.general}}></LinkList>
+  <LinkList @items={{model.sections.general}}></LinkList>
 </section>
 
 {{outlet}}
