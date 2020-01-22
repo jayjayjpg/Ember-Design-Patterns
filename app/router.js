@@ -14,6 +14,7 @@ Router.map(function() {
       this.route('reusable');
       this.route('single-purpose');
       this.route('provider');
+      this.route('presentational');
     });
   });
   this.route('anti-patterns', function() {

@@ -11,7 +11,7 @@ module('Integration | Component | pattern-explanation', function(hooks) {
 
     await render(hbs`<PatternExplanation>Jazz</PatternExplanation>`);
 
-    assert.equal(this.element.textContent.trim(), 'Show');
+    assert.equal(this.element.textContent.trim(), 'Show Explanation');
 
   });
 

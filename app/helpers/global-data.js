@@ -59,7 +59,7 @@ export default {
       },
       {
         title: 'Presentaional Components',
-        // link: 'patterns.component.stateless'
+        link: 'patterns.component.presentational'
       },
       {
         title: 'HOC',

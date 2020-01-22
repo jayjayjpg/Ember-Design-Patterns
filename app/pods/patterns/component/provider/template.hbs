@@ -8,29 +8,29 @@
     {{#amount-incrementor 
     amount=model.monthlyHiringGoal
     onAmountIncrement=(action send "updateMonthlyHiringGoal")
-  }}{{/amount-incrementor}}      
+    }}{{/amount-incrementor}}      
   </div>
   <div class="col-md-4">
     <h6>Yearly Goal</h6> 
     {{#amount-incrementor 
     amount=model.yearlyHiringGoal
     onAmountIncrement=(action send "updateYearlyHiringGoal")
-  }}{{/amount-incrementor}}      
+    }}{{/amount-incrementor}}      
   </div>
   <div class="col-md-4">
     <h6>Hires</h6>
     {{#amount-incrementor 
     amount=model.currentHires
     onAmountIncrement=(action send "updateCurrentHires")
-  }}{{/amount-incrementor}}
+    }}{{/amount-incrementor}}
   </div>
 </div>
 <div class="row text-center">
   <div class="col-md-6">
     <PercentageComplete @completed={{model.currentHires}} @total={{model.monthlyHiringGoal}} as | percent |>
-    <div class="progress">
-      <div class="progress-bar" style="width:{{percent}}%">{{percent}}%</div>
-    </div>
+      <div class="progress">
+        <div class="progress-bar" style={{html-safe (concat "width:" percent "%")}}>{{percent}}%</div>
+      </div>
       <strong>{{percent}}</strong>% of our Monthly hiring goals!
       {{#if (gte percent 100)}}
         <h3>yay! We did it!</h3>
@@ -39,9 +39,9 @@
   </div>
   <div class="col-md-6">
     <PercentageComplete @completed={{model.currentHires}} @total={{model.yearlyHiringGoal}} as | percent |>
-    <div class="progress">
-      <div class="progress-bar" style="width:{{percent}}%">{{percent}}%</div>
-    </div>
+      <div class="progress">
+        <div class="progress-bar" style={{html-safe (concat "width:" percent "%")}}>{{percent}}%</div>
+      </div>
       <strong>{{percent}}</strong>% of our Yearly hiring goals!
       {{#if (gte percent 100)}}
         <h3>You clicked a lot man....</h3>
@@ -51,7 +51,7 @@
 </div>
 
 <PatternExplanation>
-  Type of {{#link-to 'patterns.component.reusable'}}reuable component{{/link-to}}<br>
+  Type of {{#link-to "patterns.component.reusable"}}reuable component{{/link-to}}<br>
   also known as a 'renderless' component cause it ain't got no HTML or CSS<br>
   must set tagName to empty string<br>
   Only concerned with how things work<br>
