@@ -46,20 +46,16 @@ export default {
         link: 'patterns.substate-loading'
       },
       {
-        title: 'Reusable Component Pattern',
+        title: 'Reusable Component',
         link: 'patterns.component.reusable'
       },
       {
-        title: 'Single Purpose Component Pattern',
+        title: 'Single Purpose Component',
         link: 'patterns.component.single-purpose'
       },
       {
-        title: 'Container Components',
-        // link: 'patterns.component.container'
-      },
-      {
-        title: 'Renderless Components',
-        // link: 'patterns.component.renderless'
+        title: 'Provider Component',
+        link: 'patterns.component.provider'
       },
       {
         title: 'Presentaional Components',

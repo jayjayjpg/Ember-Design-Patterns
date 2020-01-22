@@ -13,6 +13,7 @@ Router.map(function() {
     this.route('component', function() {
       this.route('reusable');
       this.route('single-purpose');
+      this.route('provider');
     });
   });
   this.route('anti-patterns', function() {

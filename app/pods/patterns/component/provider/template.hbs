@@ -1,0 +1,80 @@
+{{outlet}}
+<h2>Component Provider Pattern</h2>
+
+<h4>Monthly Goals</h4>
+<div class="row text-center mb-4">
+  <div class="col-md-4">
+    <h6>Monthly Goal</h6> 
+    {{#amount-incrementor 
+    amount=model.monthlyHiringGoal
+    onAmountIncrement=(action send "updateMonthlyHiringGoal")
+  }}{{/amount-incrementor}}      
+  </div>
+  <div class="col-md-4">
+    <h6>Yearly Goal</h6> 
+    {{#amount-incrementor 
+    amount=model.yearlyHiringGoal
+    onAmountIncrement=(action send "updateYearlyHiringGoal")
+  }}{{/amount-incrementor}}      
+  </div>
+  <div class="col-md-4">
+    <h6>Hires</h6>
+    {{#amount-incrementor 
+    amount=model.currentHires
+    onAmountIncrement=(action send "updateCurrentHires")
+  }}{{/amount-incrementor}}
+  </div>
+</div>
+<div class="row text-center">
+  <div class="col-md-6">
+    <PercentageComplete @completed={{model.currentHires}} @total={{model.monthlyHiringGoal}} as | percent |>
+    <div class="progress">
+      <div class="progress-bar" style="width:{{percent}}%">{{percent}}%</div>
+    </div>
+      <strong>{{percent}}</strong>% of our Monthly hiring goals!
+      {{#if (gte percent 100)}}
+        <h3>yay! We did it!</h3>
+      {{/if}}
+    </PercentageComplete> 
+  </div>
+  <div class="col-md-6">
+    <PercentageComplete @completed={{model.currentHires}} @total={{model.yearlyHiringGoal}} as | percent |>
+    <div class="progress">
+      <div class="progress-bar" style="width:{{percent}}%">{{percent}}%</div>
+    </div>
+      <strong>{{percent}}</strong>% of our Yearly hiring goals!
+      {{#if (gte percent 100)}}
+        <h3>You clicked a lot man....</h3>
+      {{/if}}
+    </PercentageComplete> 
+  </div>
+</div>
+
+<PatternExplanation>
+  Type of {{#link-to 'patterns.component.reusable'}}reuable component{{/link-to}}<br>
+  also known as a 'renderless' component cause it ain't got no HTML or CSS<br>
+  must set tagName to empty string<br>
+  Only concerned with how things work<br>
+  loading data, performing logic, defining actions for example<br>
+  Uses yield helper to return data from component<br>
+  Calling template accesses the yielded values via a block param<br>
+  Thank you Dianne Eramo her <a href="https://youtu.be/Kyd2mQpR_9c?t=682">your talk at EmberConf 2019</a>
+  <section class="pattern-uses py-3">
+    <h3>Pattern is great for</h3>
+    <ul>
+      <li>
+      </li>    
+      <li>
+      </li>    
+    </ul>
+    <h3>Pattern is probably overkill when</h3>
+    <ul>
+      <li>
+      </li>    
+      <li>
+      </li>    
+      <li>
+      </li>    
+    </ul>
+  </section>
+</PatternExplanation>
