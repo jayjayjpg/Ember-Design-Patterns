@@ -6,9 +6,9 @@ export default Component.extend({
 
   actions: {
     updateAmount(direction) {
-      this.set('amount', this.amount + (direction * this.stepSize))
+      const newAmount = this.amount + (direction * this.stepSize)
       if (this.onAmountIncrement) {
-        this.onAmountIncrement(this.amount);
+        this.onAmountIncrement(newAmount);
       }
     }
   }
