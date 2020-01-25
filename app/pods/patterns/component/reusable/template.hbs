@@ -1,8 +1,22 @@
 <h2>Reusable Components</h2>
-{{#amount-incrementor 
-  amount=50 
-  onAmountIncrement=(action send "routeAction")
-}}{{/amount-incrementor}}
+<div class="pattern-example my-4">
+  <h3>Amount Incrementor</h3>
+  {{amount-incrementor 
+    amount=amount
+    onAmountIncrement=(action "changeAmount")
+  }}
+</div>
+
+<div class="pattern-example my-4">
+  <h3>Rating Stars</h3>
+  {{rating-stars rating=stars}}
+  <br>
+  {{amount-incrementor 
+    amount=stars
+    stepSize=0.5
+    onAmountIncrement=(action "changeStars")
+  }}
+</div>
 
 <PatternExplanation @showText="But why?">
   Pure data down, actions up<br>

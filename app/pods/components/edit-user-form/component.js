@@ -7,6 +7,21 @@ export default Component.extend({
   user: null, //passed in
   saveConfirmationTextVisible: false,
 
+  whatWillChange: computed('user.{firstName,lastName,password,hasDirtyAttributes}', function() {
+    const changedObject = this.user.changedAttributes()
+    if (Object.keys(changedObject).length < 1) {
+      return false
+    }
+
+    // for readability in the template
+    let formattedObject = {};
+    Object.keys(changedObject).forEach(change => {
+      const values = changedObject[change];
+      formattedObject[change] = `from ${values[0]} to ${values[1]}`
+    })
+    return formattedObject
+  }),
+
   isSubmitDisabled: computed('user.hasDirtyAttributes', function() {
     const dataUnchanged = !this.user.hasDirtyAttributes;
     const isSaving = this.saveUser.isRunning;

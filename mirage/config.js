@@ -3,7 +3,7 @@ export default function() {
   this.namespace = '/api/v1/';
   this.logging = true;
 
-  this.get('/users', (schema, request) => {
+  this.get('/users', (schema) => {
     return schema.users.all();
   });
 

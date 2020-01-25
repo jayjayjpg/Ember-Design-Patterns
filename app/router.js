@@ -16,6 +16,10 @@ Router.map(function() {
       this.route('provider');
       this.route('presentational');
     });
+
+    this.route('model', function() {
+      this.route('tracking');
+    });
   });
   this.route('anti-patterns', function() {
     this.route('controller-substate-loading');

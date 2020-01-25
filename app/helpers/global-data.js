@@ -74,8 +74,8 @@ export default {
         // link: 'patterns.model.know-thyself'
       },
       {
-        title: 'Model - Is You Dirty?',
-        // link: 'patterns.model.dirty'
+        title: 'Model - Tracking Changes',
+        link: 'patterns.model.tracking'
       },
       {
         title: 'Model - Control Z!',
