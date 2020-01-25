@@ -11,5 +11,19 @@
     <label>Password</label>
     {{input class="form-control" value=user.password type="password"}}
   </div>
-  <button type="submit" {{action "saveUser"}}>Save</button>
+  <button class="btn btn-{{if saveUser.isIdle 'success' 'default'}}" disabled={{this.isSubmitDisabled}}
+    type="submit" {{action 'saveUser'}}>    
+    {{#if saveUser.isRunning}}
+      <div class="spinner-border" role="status">
+        <span class="sr-only">Saving...</span>
+      </div>
+    {{else}}
+      Save 
+    {{/if}}
+  </button>
+  {{#if saveConfirmationTextVisible}}
+  <span class="text-success ml-2">
+    Saved! <FaIcon @icon="check" />
+  </span>
+  {{/if}}
 </form>
