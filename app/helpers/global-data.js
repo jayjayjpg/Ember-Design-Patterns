@@ -58,7 +58,7 @@ export default {
         link: 'patterns.component.provider'
       },
       {
-        title: 'Presentaional Components',
+        title: 'Presentational Components',
         link: 'patterns.component.presentational'
       },
       {
