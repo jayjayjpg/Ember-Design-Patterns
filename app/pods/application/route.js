@@ -4,5 +4,7 @@ import data from "design-patterns/helpers/global-data"
 export default Route.extend({
   model() {
     return data
-  }
+  },
+
+
 });
