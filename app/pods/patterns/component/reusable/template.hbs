@@ -17,10 +17,13 @@
   }}
 </div>
 
-<PatternExplanation @showText="But why?">
-  Pure data down, actions up<br>
-  passes initial data as individual, configurable properties<br>
-  exposes an action to be handled in the calling context<br>
+<PatternExplanation @showText="But why?" as | P |>
+  <P.overview @text={{model.overview}} />
+  <P.use-cases @cases={{model.useCases}} />
+  <P.non-cases @cases={{model.nonUseCases}} />
+  <P.references @references={{model.references}} />
+
+  {{!-- Pure data down, actions up<br>
   Thank you Dianne Eramo her <a href="https://youtu.be/Kyd2mQpR_9c?t=377">your talk at EmberConf 2019</a>
   <section class="pattern-uses py-3">
     <h3>Pattern is great for</h3>
@@ -44,5 +47,5 @@
         If the above is true, see the {{#link-to "patterns.component.single-purpose"}}single purpose{{/link-to}} component pattern
       </li>    
     </ul>
-  </section>
+  </section> --}}
 </PatternExplanation>
