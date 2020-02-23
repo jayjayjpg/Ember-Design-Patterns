@@ -10,17 +10,9 @@ module('Integration | Component | pattern-explanation/overview', function(hooks)
     // Set any properties with this.set('myProperty', 'value');
     // Handle any actions with this.set('myAction', function(val) { ... });
 
-    await render(hbs`{{pattern-explanation/overview}}`);
+    await render(hbs`{{pattern-explanation/overview text="yolo"}}`);
 
-    assert.equal(this.element.textContent.trim(), '');
+    assert.dom('div').hasText('overview yolo');
 
-    // Template block usage:
-    await render(hbs`
-      {{#pattern-explanation/overview}}
-        template block text
-      {{/pattern-explanation/overview}}
-    `);
-
-    assert.equal(this.element.textContent.trim(), 'template block text');
   });
 });

@@ -1,12 +1,11 @@
 <h1>{{model.text.title}}</h1>
-  {{log model}}
-<div class="pattern-example my-4">
-  <h3>Amount Incrementor</h3>
+
+<PatternExampleContainer @title="Amount Incrementor">
   {{amount-incrementor 
     amount=amount
     onAmountIncrement=(action "changeAmount")
   }}
-</div>
+</PatternExampleContainer>
 
 <div class="pattern-example my-4">
   <h3>Rating Stars</h3>

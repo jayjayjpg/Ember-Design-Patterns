@@ -12,15 +12,6 @@ module('Integration | Component | pattern-explanation/use-cases', function(hooks
 
     await render(hbs`{{pattern-explanation/use-cases}}`);
 
-    assert.equal(this.element.textContent.trim(), '');
-
-    // Template block usage:
-    await render(hbs`
-      {{#pattern-explanation/use-cases}}
-        template block text
-      {{/pattern-explanation/use-cases}}
-    `);
-
-    assert.equal(this.element.textContent.trim(), 'template block text');
+    assert.equal(this.element.textContent.trim(), 'Use Cases');
   });
 });

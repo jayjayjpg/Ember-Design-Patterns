@@ -12,15 +12,6 @@ module('Integration | Component | pattern-explanation/references', function(hook
 
     await render(hbs`{{pattern-explanation/references}}`);
 
-    assert.equal(this.element.textContent.trim(), '');
-
-    // Template block usage:
-    await render(hbs`
-      {{#pattern-explanation/references}}
-        template block text
-      {{/pattern-explanation/references}}
-    `);
-
-    assert.equal(this.element.textContent.trim(), 'template block text');
+    assert.equal(this.element.textContent.trim(), 'references');
   });
 });

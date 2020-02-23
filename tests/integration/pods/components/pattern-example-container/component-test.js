@@ -3,15 +3,24 @@ import { setupRenderingTest } from 'ember-qunit';
 import { render } from '@ember/test-helpers';
 import hbs from 'htmlbars-inline-precompile';
 
-module('Integration | Component | pattern-explanation/link-list', function(hooks) {
+module('Integration | Component | pattern-example-container', function(hooks) {
   setupRenderingTest(hooks);
 
   test('it renders', async function(assert) {
     // Set any properties with this.set('myProperty', 'value');
     // Handle any actions with this.set('myAction', function(val) { ... });
 
-    await render(hbs`{{pattern-explanation/link-list}}`);
+    await render(hbs`{{pattern-example-container}}`);
 
     assert.equal(this.element.textContent.trim(), '');
+
+    // Template block usage:
+    await render(hbs`
+      {{#pattern-example-container}}
+        template block text
+      {{/pattern-example-container}}
+    `);
+
+    assert.equal(this.element.textContent.trim(), 'template block text');
   });
 });

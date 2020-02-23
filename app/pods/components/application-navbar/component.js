@@ -14,7 +14,7 @@ export default Component.extend({
 
   didInsertElement() {
     const { currentRouteName } = this.router;
-    if (currentRouteName !== "index") {
+    if (currentRouteName && currentRouteName !== "index") {
       const routeParts = currentRouteName.split(".")
       this.set('currentSection', routeParts[0])
     }

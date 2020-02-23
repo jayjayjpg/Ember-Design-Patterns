@@ -14,13 +14,5 @@ module('Integration | Component | pattern-explanation/list', function(hooks) {
 
     assert.equal(this.element.textContent.trim(), '');
 
-    // Template block usage:
-    await render(hbs`
-      {{#pattern-explanation/list}}
-        template block text
-      {{/pattern-explanation/list}}
-    `);
-
-    assert.equal(this.element.textContent.trim(), 'template block text');
   });
 });
