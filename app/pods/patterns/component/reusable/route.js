@@ -1,27 +1,42 @@
 import Route from '@ember/routing/route';
+import { inject as service } from '@ember/service';
+import { computed } from '@ember/object';
+
+const TRANSLATION_NAMESPACE = "patterns.reusable-component"
 
 export default Route.extend({
+  intl: service(),
+  beforeModel() {
+    this._super(...arguments)
+    /* NOTE: if you lazily load translations, here is also where you would load them via `intl.addTranslations` */
+    return this.intl.setLocale(['en-us']); /* array optional */
+  },
+
   model() {
     return {
-      useCases: [
-         "Building an Addon for the Ember Community :-)",
-         "Components that will be reused in various scenarios in different routes and with different models" 
-      ],
-      nonUseCases: [
-        "A component will only be used with one model and should modify the data directly",
-        "A component should not be 'context aware' (know what the route has for state)",
-        "If the above is true, see the single purpose component pattern",
-      ],
-      overview: `
-        passes initial data as individual, configurable properties \n
-        exposes an action to be handled in the calling context
-      `,
-      references: [
-        {
-          title: "Dianne Eramo EmberConf 2019",
-          link: "https://youtu.be/Kyd2mQpR_9c?t=377"  
+      text: {
+        title: this.intl.t(`${TRANSLATION_NAMESPACE}.title`),
+        'pattern-explanation': {
+          show: this.intl.t(`${TRANSLATION_NAMESPACE}.pattern-explanation.open`),
+          hide: this.intl.t(`${TRANSLATION_NAMESPACE}.pattern-explanation.hide`),
+          overview: this.intl.t(`${TRANSLATION_NAMESPACE}.pattern-explanation.overview`),
+          'use-cases': [
+            this.intl.t(`${TRANSLATION_NAMESPACE}.pattern-explanation.use-cases.u1`),
+            this.intl.t(`${TRANSLATION_NAMESPACE}.pattern-explanation.use-cases.u2`),
+          ],
+          'rabbit-holes': [
+            this.intl.t(`${TRANSLATION_NAMESPACE}.pattern-explanation.rabbit-holes.r1`),
+            this.intl.t(`${TRANSLATION_NAMESPACE}.pattern-explanation.rabbit-holes.r2`),
+            this.intl.t(`${TRANSLATION_NAMESPACE}.pattern-explanation.rabbit-holes.r3`),
+          ],
+          'references': [
+            {
+              title: this.intl.t(`${TRANSLATION_NAMESPACE}.pattern-explanation.references.ref1.title`),
+              link: this.intl.t(`${TRANSLATION_NAMESPACE}.pattern-explanation.references.ref1.link`)
+            }
+          ]
         }
-      ]
+      }
     }
   }
 });
