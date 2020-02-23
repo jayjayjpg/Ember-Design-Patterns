@@ -12,3 +12,9 @@
     border-bottom: 1px solid white;    
   }
 }
+
+.sortable-table {
+  &__header-cell {
+    cursor: pointer;
+  }
+}

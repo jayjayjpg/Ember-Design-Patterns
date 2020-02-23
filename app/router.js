@@ -15,6 +15,7 @@ Router.map(function() {
       this.route('single-purpose');
       this.route('provider');
       this.route('presentational');
+      this.route('contextual');
     });
 
     this.route('model', function() {
@@ -24,7 +25,6 @@ Router.map(function() {
   this.route('anti-patterns', function() {
     this.route('controller-substate-loading');
   });
-
 });
 
 export default Router;

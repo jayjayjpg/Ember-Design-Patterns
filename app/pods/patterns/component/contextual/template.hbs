@@ -1,0 +1,20 @@
+{{#sortable-table activeSortBy="id" data=model as |table|}}
+  <thead>
+    <tr>
+      {{#table.th field='id'}}ID{{/table.th}}
+      {{#table.th field='name'}}Name{{/table.th}}
+      {{#table.th field='origin'}}Origin{{/table.th}}
+      {{#table.th field='price'}}Price{{/table.th}}
+    </tr>
+  </thead>
+  <tbody>
+    {{#each table.sortedData as |honey|}}
+      <tr>
+        <td>{{honey.id}}</td>
+        <td>{{honey.name}}</td>
+        <td>{{honey.origin}}</td>
+        <td>${{honey.price}}</td>
+      </tr>
+    {{/each}}
+  </tbody>
+{{/sortable-table}}

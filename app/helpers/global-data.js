@@ -67,6 +67,10 @@ export default {
           link: 'patterns.component.presentational'
         },
         {
+          title: 'Contextual Components',
+          link: 'patterns.component.contextual'
+        },
+        {
           title: 'HOC',
           // link: 'patterns.component.hoc'
         },
