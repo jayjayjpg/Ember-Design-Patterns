@@ -3,6 +3,6 @@
 module.exports = {
   extends: 'recommended',
   rules: {
-    'inline-styles': false
+    'no-inline-styles': false
   }
 };

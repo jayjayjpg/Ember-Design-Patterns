@@ -1,22 +1,22 @@
-<h1 class="text-center" onclick={{action "updateCurrentlySelectedSection" null}}>
+<h1 class="text-center" role="button" onclick={{action "updateCurrentlySelectedSection" null}}>
   {{#link-to "index"}}
     {{appTitle}}
   {{/link-to}}
 </h1>
 
 <nav class="navbar navbar-sections navbar-expand navbar-dark primary-color">
-    <ul class="navbar-nav mr-auto ml-auto">
-      {{#each-in sections as | sectionTitle data |}}
-        {{#let (eq currentSection sectionTitle) as | isSelected |}}
-          <li onclick={{action "updateCurrentlySelectedSection" (if isSelected null sectionTitle)}} class="nav-item{{if isSelected " active"}}">
-            <h3 href="#" class="nav-link mx-3">
-              <FaIcon @icon={{data.icon}} />
-              {{sectionTitle}}
-            </h3>
-          </li>
-        {{/let}}
-      {{/each-in}}
-    </ul>
+  <ul class="navbar-nav mr-auto ml-auto">
+    {{#each-in sections as | sectionTitle data |}}
+      {{#let (eq currentSection sectionTitle) as | isSelected |}}
+        <li role="button" onclick={{action "updateCurrentlySelectedSection" (if isSelected null sectionTitle)}} class="nav-item{{if isSelected " active"}}">
+          <h3 href="#" class="nav-link mx-3">
+            <FaIcon @icon={{data.icon}} />
+            {{sectionTitle}}
+          </h3>
+        </li>
+      {{/let}}
+    {{/each-in}}
+  </ul>
 </nav>
 
 {{#each-in sections as | sectionTitle data |}}
