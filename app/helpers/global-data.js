@@ -71,6 +71,10 @@ export default {
           link: 'patterns.component.contextual'
         },
         {
+          title: 'Declarative Rendering',
+          link: 'patterns.component.declarative-rendering'
+        },
+        {
           title: 'HOC',
           // link: 'patterns.component.hoc'
         },

@@ -16,6 +16,7 @@ Router.map(function() {
       this.route('provider');
       this.route('presentational');
       this.route('contextual');
+      this.route('declarative-rendering');
     });
 
     this.route('model', function() {

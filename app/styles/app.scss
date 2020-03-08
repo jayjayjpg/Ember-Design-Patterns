@@ -1,20 +1,5 @@
 @import "custom";
 @import "ember-cli-bootstrap-4/bootstrap";
-
-.nav-item > .active {
-  border: 1px solid white;
-  border-radius: 4px;
-}
-
-.navbar-sections .nav-item {
-  cursor: pointer;
-  &.active > * {
-    border-bottom: 1px solid white;    
-  }
-}
-
-.sortable-table {
-  &__header-cell {
-    cursor: pointer;
-  }
-}
+@import "./carousel";
+@import "./nav";
+@import "./sortable-table";
