@@ -1,10 +1,12 @@
 import Component from '@ember/component';
 import { inject as service } from '@ember/service';
+import data from "design-patterns/helpers/global-data"
 
 export default Component.extend({
   router: service(),
 
   currentSection: null,
+  data,
 
   actions: {
     updateCurrentlySelectedSection(newSection) {

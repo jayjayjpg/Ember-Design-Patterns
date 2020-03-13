@@ -41,65 +41,75 @@ export default {
     },
     patterns: { 
       icon: "thumbs-up",
-      articles: [
-        {
-          title: 'Error States',
-          link: 'patterns.substate-error'
-        },
-        {
-          title: 'Loading States',
-          link: 'patterns.substate-loading'
-        },
-        {
-          title: 'Reusable Component',
-          link: 'patterns.component.reusable'
-        },
-        {
-          title: 'Single Purpose Component',
-          link: 'patterns.component.single-purpose'
-        },
-        {
-          title: 'Provider Component',
-          link: 'patterns.component.provider'
-        },
-        {
-          title: 'Presentational Components',
-          link: 'patterns.component.presentational'
-        },
-        {
-          title: 'Contextual Components',
-          link: 'patterns.component.contextual'
-        },
-        {
-          title: 'Declarative Rendering',
-          link: 'patterns.component.declarative-rendering'
-        },
-        {
-          title: 'HOC',
-          // link: 'patterns.component.hoc'
-        },
-        {
-          title: 'Mixins - Fully Encapsulated',
-          // link: 'patterns.mixin.fully-encapulated'
-        },
-        {
-          title: 'Model - Know Thyself',
-          // link: 'patterns.model.know-thyself'
-        },
-        {
-          title: 'Model - Tracking Changes',
-          link: 'patterns.model.tracking',
-          needsServer: true,
-        },
-        {
-          title: 'Model - Control Z!',
-          // link: 'patterns.model.rollback'
-        },
-        {
-          title: 'Ember Concurrency',
-          // link: 'patterns.concurrency'
-        },
-      ],
+      articles: {
+        substates: [
+          {
+            title: 'Error States',
+            link: 'patterns.substate-error'
+          },
+          {
+            title: 'Loading States',
+            link: 'patterns.substate-loading'
+          }  
+        ],
+        components: [
+          {
+            title: 'Reusable Component',
+            link: 'patterns.component.reusable'
+          },
+          {
+            title: 'Single Purpose Component',
+            link: 'patterns.component.single-purpose'
+          },
+          {
+            title: 'Provider Component',
+            link: 'patterns.component.provider'
+          },
+          {
+            title: 'Presentational Components',
+            link: 'patterns.component.presentational'
+          },
+          {
+            title: 'Contextual Components',
+            link: 'patterns.component.contextual'
+          },
+          {
+            title: 'Declarative Rendering',
+            link: 'patterns.component.declarative-rendering'
+          },
+          {
+            title: 'HOC',
+            // link: 'patterns.component.hoc'
+          }  
+        ],
+        models: [
+          {
+            title: 'Model - Know Thyself',
+            // link: 'patterns.model.know-thyself'
+          },
+          {
+            title: 'Model - Tracking Changes',
+            link: 'patterns.model.tracking',
+            needsServer: true,
+          },
+          {
+            title: 'Model - Control Z!',
+            // link: 'patterns.model.rollback'
+          }  
+        ],
+        mixins: [
+          {
+            title: 'Fully Encapsulate',
+            // link: 'patterns.mixin.fully-encapulated'
+          },  
+        ],
+        actions: [
+          {
+            title: 'Ember Concurrency',
+            // link: 'patterns.concurrency'
+          }
+        ]
+      }
     },
     "anti-patterns": { 
       icon: "exclamation-triangle",
