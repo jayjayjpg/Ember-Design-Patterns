@@ -1,14 +1,13 @@
-<h1>{{model.text.title}}</h1>
+<h1>{{t (concat model.t_ns "title")}}</h1>
 
 <PatternExampleContainer @title="Carousel">
   <DeclarativeCarousel @photos={{model.photos}} @currentSlideIndex={{model.currentSlideIndex}} />
-  <h3>The current slide index is {{model.currentSlideIndex}}</h3>
+  {{t (concat model.t_ns "current_slide") currentSlideNumber=(add model.currentSlideIndex 1)}}
 </PatternExampleContainer>
-
-<PatternExplanation @showText={{model.text.pattern-explanation.show}} as | P |>
-  <P.overview @text={{model.text.pattern-explanation.overview}} />
-  <P.use-cases @cases={{model.text.pattern-explanation.use-cases}} />
-  <P.non-cases @cases={{model.text.pattern-explanation.rabbit-holes}} />
-  <P.references @references={{model.text.pattern-explanation.references}} />
+<PatternExplanation @showText={{t (concat model.t_ns_pe "show")}} as | P |>
+  <P.overview @text={{t (concat model.t_ns_pe "overview")}} />
+  <P.use-cases @cases={{model.use_cases}} />
+  <P.non-cases @cases={{model.rabbit_holes}} />
+  <P.references @references={{model.references}} />
 </PatternExplanation>
 
