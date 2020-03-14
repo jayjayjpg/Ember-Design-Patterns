@@ -1,2 +1,6 @@
-site-data:
+site_data:
   title: Ember Design Patterns
+  sections:
+    anti_patterns:
+      title: Anti-Patterns
+      articles: soon

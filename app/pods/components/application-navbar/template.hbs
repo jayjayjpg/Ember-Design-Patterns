@@ -6,64 +6,74 @@
 
 <NavigationMenu as |Menu|>
   <Menu.item as |Item|>
-    <h3><FaIcon @icon={{data.sections.general.icon}} class="mr-2" />General</h3>
+    <h3><FaIcon @icon={{data.sections.general.icon}} class="mr-2" />{{t 'general.title'}}</h3>
     <Item.submenu as |Menu|>
       {{#each data.sections.general.articles as |article|}}
         <Menu.item @route={{article.link}}>
-          {{unless article.link '[WIP]'}} {{article.title}}
+          <NavigationMenuLink @section="general" @article={{article}}/>
         </Menu.item>
       {{/each}}
     </Item.submenu>
   </Menu.item>
   <Menu.item as |Item|>
-    <h3><FaIcon @icon={{data.sections.patterns.icon}} class="mr-2" />Patterns</h3>
+    <h3><FaIcon @icon={{data.sections.patterns.icon}} class="mr-2" />{{t 'patterns.title'}}</h3>
     <Item.submenu as |Menu|>
       <Menu.item as |Item|>
-        Substates<FaIcon @icon="chevron-right" class="ml-1"/>
+        {{t 'patterns.substates'}}<FaIcon @icon="chevron-right" class="ml-1"/>
         <Item.submenu as |Menu|>
           {{#each data.sections.patterns.articles.substates as |article|}}
             <Menu.item @route={{article.link}}>
-              {{article.title}}
+              <NavigationMenuLink @section="patterns" @article={{article}}/>
             </Menu.item>
           {{/each}}
         </Item.submenu>
       </Menu.item>
       <Menu.item as |Item|>
-        Components<FaIcon @icon="chevron-right" class="ml-1"/>
+        {{t 'patterns.components'}}<FaIcon @icon="chevron-right" class="ml-1"/>
         <Item.submenu as |Menu|>
           {{#each data.sections.patterns.articles.components as |article|}}
             <Menu.item @route={{article.link}}>
-              {{unless article.link '[WIP]'}} {{article.title}}
+              <NavigationMenuLink @section="patterns" @article={{article}}/>
             </Menu.item>
           {{/each}}
         </Item.submenu>
       </Menu.item>
       <Menu.item as |Item|>
-        Models<FaIcon @icon="chevron-right" class="ml-1"/>
+        {{t 'patterns.data_down_actions_up'}}<FaIcon @icon="chevron-right" class="ml-1"/>
+        <Item.submenu as |Menu|>
+          {{#each data.sections.patterns.articles.data_down_actions_up as |article|}}
+            <Menu.item @route={{article.link}}>
+              <NavigationMenuLink @section="patterns" @article={{article}}/>
+            </Menu.item>
+          {{/each}}
+        </Item.submenu>
+      </Menu.item>
+      <Menu.item as |Item|>
+        {{t 'patterns.models'}}<FaIcon @icon="chevron-right" class="ml-1"/>
         <Item.submenu as |Menu|>
           {{#each data.sections.patterns.articles.models as |article|}}
             <Menu.item @route={{article.link}}>
-              {{unless article.link '[WIP]'}} {{article.title}}
+              <NavigationMenuLink @section="patterns" @article={{article}}/>
             </Menu.item>
           {{/each}}
         </Item.submenu>
       </Menu.item>
       <Menu.item as |Item|>
-        Mixins<FaIcon @icon="chevron-right" class="ml-1"/>
+        {{t 'patterns.mixins'}}<FaIcon @icon="chevron-right" class="ml-1"/>
         <Item.submenu as |Menu|>
           {{#each data.sections.patterns.articles.mixins as |article|}}
             <Menu.item @route={{article.link}}>
-              {{unless article.link '[WIP]'}} {{article.title}}
+              <NavigationMenuLink @section="patterns" @article={{article}}/>
             </Menu.item>
           {{/each}}
         </Item.submenu>
       </Menu.item>
       <Menu.item as |Item|>
-        Actions<FaIcon @icon="chevron-right" class="ml-1"/>
+        {{t 'patterns.actions'}}<FaIcon @icon="chevron-right" class="ml-1"/>
         <Item.submenu as |Menu|>
           {{#each data.sections.patterns.articles.actions as |article|}}
             <Menu.item @route={{article.link}}>
-              {{unless article.link '[WIP]'}} {{article.title}}
+              <NavigationMenuLink @section="patterns" @article={{article}}/>
             </Menu.item>
           {{/each}}
         </Item.submenu>
@@ -71,11 +81,11 @@
     </Item.submenu>
   </Menu.item>
   <Menu.item as |Item|>
-    <h3><FaIcon @icon={{data.sections.anti-patterns.icon}} class="mr-2" />Anti-Patterns</h3>
+    <h3><FaIcon @icon={{data.sections.anti-patterns.icon}} class="mr-2" />{{t 'site_data.sections.anti_patterns.title'}}</h3>
     <Item.submenu as |Menu|>
       {{#each data.sections.anti-patterns.articles as |article|}}
         <Menu.item @route={{article.link}}>
-          {{unless article.link '[WIP]'}} {{article.title}}
+          <NavigationMenuLink @section="anti_patterns" @article={{article}}/>
         </Menu.item>
       {{/each}}
     </Item.submenu>

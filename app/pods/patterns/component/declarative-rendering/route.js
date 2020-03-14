@@ -4,6 +4,9 @@ import { inject as service } from '@ember/service';
 const picsumURL = "https://picsum.photos/800/400?random=";
 const photos = [1,2,3,4,5,6,7,8].map(int => `${picsumURL}${int}`)
 
+const t_ns = "patterns.articles.declarative_rendering.";
+const t_ns_pe = `${t_ns}pattern_explanation.`;
+
 export default Route.extend({
   intl: service(),
   beforeModel() {
@@ -13,9 +16,6 @@ export default Route.extend({
   },
 
   model() {
-    const t_ns = "patterns.declarative_rendering.";
-    const t_ns_pe = `${t_ns}pattern_explanation.`;
-
     return {
       t_ns,
       t_ns_pe,

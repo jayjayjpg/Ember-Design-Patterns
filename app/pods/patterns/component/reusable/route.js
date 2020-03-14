@@ -1,7 +1,8 @@
 import Route from '@ember/routing/route';
 import { inject as service } from '@ember/service';
 
-const TRANSLATION_NAMESPACE = "patterns.reusable-component"
+const t_ns = "patterns.articles.reusable_component.";
+const t_ns_pe = `${t_ns}pattern_explanation.`;
 
 export default Route.extend({
   intl: service(),
@@ -13,29 +14,23 @@ export default Route.extend({
 
   model() {
     return {
-      text: {
-        title: this.intl.t(`${TRANSLATION_NAMESPACE}.title`),
-        'pattern-explanation': {
-          show: this.intl.t(`${TRANSLATION_NAMESPACE}.pattern-explanation.open`),
-          hide: this.intl.t(`${TRANSLATION_NAMESPACE}.pattern-explanation.hide`),
-          overview: this.intl.t(`${TRANSLATION_NAMESPACE}.pattern-explanation.overview`),
-          'use-cases': [
-            this.intl.t(`${TRANSLATION_NAMESPACE}.pattern-explanation.use-cases.u1`),
-            this.intl.t(`${TRANSLATION_NAMESPACE}.pattern-explanation.use-cases.u2`),
-          ],
-          'rabbit-holes': [
-            this.intl.t(`${TRANSLATION_NAMESPACE}.pattern-explanation.rabbit-holes.r1`),
-            this.intl.t(`${TRANSLATION_NAMESPACE}.pattern-explanation.rabbit-holes.r2`),
-            this.intl.t(`${TRANSLATION_NAMESPACE}.pattern-explanation.rabbit-holes.r3`),
-          ],
-          'references': [
-            {
-              title: this.intl.t(`${TRANSLATION_NAMESPACE}.pattern-explanation.references.ref1.title`),
-              link: this.intl.t(`${TRANSLATION_NAMESPACE}.pattern-explanation.references.ref1.link`)
-            }
-          ]
-        }
-      }
+      t_ns,
+      t_ns_pe,
+      use_cases: [
+        this.intl.t(`${t_ns_pe}use_cases.u1`),
+        this.intl.t(`${t_ns_pe}use_cases.u2`),
+      ],
+      rabbit_holes: [
+        this.intl.t(`${t_ns_pe}rabbit_holes.r1`),
+        this.intl.t(`${t_ns_pe}rabbit_holes.r2`),
+        this.intl.t(`${t_ns_pe}rabbit_holes.r3`),
+      ],
+      references: [
+        {
+          title: this.intl.t(`${t_ns_pe}references.ref1.title`),
+          link: this.intl.t(`${t_ns_pe}references.ref1.link`)
+        },
+      ]
     }
   }
 });

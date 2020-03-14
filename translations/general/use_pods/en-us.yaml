@@ -1,0 +1,5 @@
+general:
+  articles: 
+    use_pods:
+      title: Use Pods
+      subtitle: Encapsulation of Concerns Reduces Cognitive Load
