@@ -28,7 +28,7 @@ export default Route.extend({
         this.intl.t(`${t_ns_pe}rabbit_holes.r1`),
       ],
       references: [
-        { 
+        {
           title: this.intl.t(`${t_ns_pe}references.ref1.title`),
           link: this.intl.t(`${t_ns_pe}references.ref1.link`)
         },
