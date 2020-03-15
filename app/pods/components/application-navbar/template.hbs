@@ -69,16 +69,6 @@
           {{/each}}
         </Item.submenu>
       </Menu.item>
-      <Menu.item as |Item|>
-        {{t 'patterns.actions'}}<FaIcon @icon="chevron-right" class="ml-1"/>
-        <Item.submenu as |Menu|>
-          {{#each data.sections.patterns.articles.actions as |article|}}
-            <Menu.item @route={{article.link}}>
-              <NavigationMenuLink @section="patterns" @article={{article}}/>
-            </Menu.item>
-          {{/each}}
-        </Item.submenu>
-      </Menu.item>
     </Item.submenu>
   </Menu.item>
   <Menu.item as |Item|>
