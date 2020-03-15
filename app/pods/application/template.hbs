@@ -2,6 +2,7 @@
   <ApplicationNavbar
     @appTitle={{t 'site_data.title'}}
     @sections={{model.sections}}
+    @changeLocale={{action "changeLocale"}}
   />
   {{outlet}}
 </div>

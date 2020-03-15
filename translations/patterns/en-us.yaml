@@ -1,9 +1,0 @@
-patterns:
-  title: Patterns
-  subtitle: Ember - The Good Stuff
-  components: Components
-  substates: Substates
-  data_down_actions_up: Data Down Actions Up
-  models: Models
-  mixins: Mixins
-  actions: Actions

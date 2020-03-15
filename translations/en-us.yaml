@@ -1,6 +1,14 @@
 site_data:
   title: Ember Design Patterns
-  sections:
-    anti_patterns:
-      title: Anti-Patterns
-      articles: soon
+anti_patterns:
+  title: Anti Patterns
+general:
+  title: General
+patterns:
+  title: Patterns
+  components: Components
+  substates: Substates
+  data_down_actions_up: Data Down Actions Up
+  models: Models
+  mixins: Mixins
+  actions: Actions
