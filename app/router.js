@@ -26,6 +26,10 @@ Router.map(function() {
   this.route('anti-patterns', function() {
     this.route('controller-substate-loading');
   });
+
+  this.route('general', function() {
+    this.route('use-pods');
+  });
 });
 
 export default Router;

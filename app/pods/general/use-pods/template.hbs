@@ -1,0 +1,16 @@
+<RouteContainer @title={{model.title}} @subtitle={{model.subtitle}}>
+  <IntlSection @t_ns={{model.t_ns}} @section="everybody_else_is_doing_it" as |t_ns|>
+    <p>{{t (concat t_ns "section_1")}}</p>
+    <p>{{t (concat t_ns "section_2")}}</p>
+  </IntlSection>
+  <IntlSection @t_ns={{model.t_ns}} @section="curly_brackets_are_so_2003" as |t_ns|>
+    <p>{{t (concat t_ns "section_1")}}</p>
+    <div>
+      <blockquote class="blockquote">
+        "{{t (concat t_ns "section_2_quote")}}"<br>
+        - <strong>{{t (concat t_ns "section_2_quote_author")}}</strong>
+      </blockquote>      
+      <p>{{t (concat t_ns "section_2")}}</p>
+    </div>
+  </IntlSection>
+</RouteContainer>
