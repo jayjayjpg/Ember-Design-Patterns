@@ -29,6 +29,7 @@ Router.map(function() {
 
   this.route('general', function() {
     this.route('use-pods');
+    this.route('data-flow');
   });
 });
 
