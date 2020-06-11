@@ -12,6 +12,6 @@ module('Integration | Component | pattern-explanation/use-cases', function(hooks
 
     await render(hbs`{{pattern-explanation/use-cases}}`);
 
-    assert.equal(this.element.textContent.trim(), 'Use Cases');
+    assert.dom(this.element).hasText('Use Cases');
   });
 });

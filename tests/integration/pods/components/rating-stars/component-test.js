@@ -15,21 +15,21 @@ module('Integration | Component | rating-stars', function(hooks) {
   test('it renders 2 stars and no half stars with a rating of 2', async function(assert) {
     await render(hbs`{{rating-stars rating=2}}`);
 
-    assert.equal(findAll('[data-test-rating-star]').length, 2)
+    assert.dom('[data-test-rating-star]').exists({ count: 2 })
     assert.dom('[data-test-rating-star-half]').doesNotExist()
   });
 
   test('it renders 4 whole stars and 1 half stars with a rating of 4.5', async function(assert) {
     await render(hbs`{{rating-stars rating=4.5}}`);
 
-    assert.equal(findAll('[data-test-rating-star]').length, 4)
+    assert.dom('[data-test-rating-star]').exists({ count: 4 })
     assert.dom('[data-test-rating-star-half]').exists()
   });
 
   test('it renders 4 whole stars with a rating of 4.4', async function(assert) {
     await render(hbs`{{rating-stars rating=4.4}}`);
 
-    assert.equal(findAll('[data-test-rating-star]').length, 4)
+    assert.dom('[data-test-rating-star]').exists({ count: 4 })
     assert.dom('[data-test-rating-star-half]').doesNotExist()
   });
 });

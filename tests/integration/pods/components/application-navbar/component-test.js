@@ -12,6 +12,6 @@ module('Integration | Component | application-navbar', function(hooks) {
 
     await render(hbs`{{application-navbar}}`);
 
-    assert.equal(this.element.textContent.trim(), '');
+    assert.dom(this.element).hasText('');
   });
 });

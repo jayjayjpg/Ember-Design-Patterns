@@ -11,7 +11,7 @@ module('Integration | Component | pattern-explanation', function(hooks) {
 
     await render(hbs`<PatternExplanation>Jazz</PatternExplanation>`);
 
-    assert.equal(this.element.textContent.trim(), 'Show Explanation');
+    assert.dom(this.element).hasText('Show Explanation');
 
   });
 
@@ -20,7 +20,7 @@ module('Integration | Component | pattern-explanation', function(hooks) {
 
     await render(hbs`<PatternExplanation/>`);
 
-    assert.equal(this.element.textContent.trim(), '');
+    assert.dom(this.element).hasText('');
 
   });
 

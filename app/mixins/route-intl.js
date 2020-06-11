@@ -7,7 +7,7 @@ export default Mixin.create({
 
   beforeModel() {
     // translations only use '_' as seperators but route use '-'
-    let routeName = this.get('routeName').replace(/-/g, "_");
+    let routeName = this.routeName.replace(/-/g, "_");
     this.set('t_ns', routeName);
   },
 

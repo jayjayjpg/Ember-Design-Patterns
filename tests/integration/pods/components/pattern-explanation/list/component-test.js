@@ -12,7 +12,7 @@ module('Integration | Component | pattern-explanation/list', function(hooks) {
 
     await render(hbs`{{pattern-explanation/list}}`);
 
-    assert.equal(this.element.textContent.trim(), '');
+    assert.dom(this.element).hasText('');
 
   });
 });

@@ -12,7 +12,7 @@ module('Integration | Component | pattern-explanation/rabbit-holes', function(ho
 
     await render(hbs`{{pattern-explanation/rabbit-holes}}`);
 
-    assert.equal(this.element.textContent.trim(), 'Beware of Rabbit Holes');
+    assert.dom(this.element).hasText('Beware of Rabbit Holes');
 
   });
 });

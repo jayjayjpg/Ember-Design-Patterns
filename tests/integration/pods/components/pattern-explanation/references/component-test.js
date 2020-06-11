@@ -12,6 +12,6 @@ module('Integration | Component | pattern-explanation/references', function(hook
 
     await render(hbs`{{pattern-explanation/references}}`);
 
-    assert.equal(this.element.textContent.trim(), 'references');
+    assert.dom(this.element).hasText('references');
   });
 });

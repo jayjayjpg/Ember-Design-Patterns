@@ -12,7 +12,7 @@ module('Integration | Helper | array-split', function(hooks) {
 
     await render(hbs`{{array-split inputValue "."}}`);
 
-    assert.equal(this.element.textContent.trim(), desiredOutput);
+    assert.dom(this.element).hasText(desiredOutput);
   });
 
   test('it returns null if null is passed in', async function(assert) {
@@ -21,7 +21,7 @@ module('Integration | Helper | array-split', function(hooks) {
 
     await render(hbs`{{array-split inputValue}}`);
 
-    assert.equal(this.element.textContent.trim(), desiredOutput);
+    assert.dom(this.element).hasText(desiredOutput);
   });
 
   test('it returns every letter in an array if no seperator is specified', async function(assert) {
@@ -30,6 +30,6 @@ module('Integration | Helper | array-split', function(hooks) {
 
     await render(hbs`{{array-split inputValue}}`);
 
-    assert.equal(this.element.textContent.trim(), desiredOutput);
+    assert.dom(this.element).hasText(desiredOutput);
   });
 });

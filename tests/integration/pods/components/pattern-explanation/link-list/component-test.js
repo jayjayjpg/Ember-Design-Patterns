@@ -12,6 +12,6 @@ module('Integration | Component | pattern-explanation/link-list', function(hooks
 
     await render(hbs`{{pattern-explanation/link-list}}`);
 
-    assert.equal(this.element.textContent.trim(), '');
+    assert.dom(this.element).hasText('');
   });
 });
