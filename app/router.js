@@ -31,4 +31,6 @@ Router.map(function() {
     this.route('use-pods');
     this.route('data-flow');
   });
+
+  this.route('freestyle');
 });
