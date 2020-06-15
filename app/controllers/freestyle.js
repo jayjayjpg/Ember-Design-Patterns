@@ -1,10 +1,13 @@
-import Ember from 'ember';
+import { readOnly } from '@ember/object/computed';
+import config from 'design-patterns/config/environment';
+import { computed, get } from '@ember/object';
+import { inject as service } from '@ember/service';
+import { lookupByFactoryType } from 'ember-intl/hydrate';
 import FreestyleController from 'ember-freestyle/controllers/freestyle';
 
-const { inject } = Ember;
-
 export default FreestyleController.extend({
-  emberFreestyle: inject.service(),
+  emberFreestyle: service(),
+  intl: service(),
 
   /* BEGIN-FREESTYLE-USAGE fp--notes
 ### A few notes regarding freestyle-palette
@@ -56,6 +59,29 @@ export default Ember.Component.extend({
     'background': {
       'name': 'white',
       'base': '#ffffff'
+    }
+  },
+
+  activeLocale: readOnly('intl.locale'),
+
+  locales: computed(function() {
+    return lookupByFactoryType('translations', modulePrefix).map(moduleName => moduleName.split('/').pop());
+  }).readOnly(),
+
+  selections: computed('locales.[]', 'activeLocale', function() {
+    let active = this.activeLocale;
+
+    return this.locales.map(locale => {
+      return {
+        locale: locale,
+        active: active.indexOf(locale) > -1
+      };
+    });
+  }).readOnly(),
+
+  actions: {
+    changeLocale(locale) {
+      return this.intl.set('locale', locale);
     }
   }
 });

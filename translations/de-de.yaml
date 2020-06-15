@@ -4,6 +4,8 @@ anti_patterns:
   title: Anti-Muster
 general:
   title: Allgemeines
+  articles:
+    use_pods: Pods-Struktur benutzen
 patterns:
   title: Muster
   components: Komponenten
@@ -11,4 +13,4 @@ patterns:
   data_down_actions_up: Daten nach unten Aktionen nach oben
   models: Modelle
   mixins: Mixins
-  actions: Aktionen  
+  actions: Aktionen

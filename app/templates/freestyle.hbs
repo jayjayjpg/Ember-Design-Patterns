@@ -1,7 +1,26 @@
 {{#freestyle-guide
-  title='Ember Freestyle'
-  subtitle='Living Style Guide'
+  title=(t 'site_data.title')
   }}
+
+  <div class="container py-4">
+    <ApplicationNavbar
+      @appTitle={{t 'site_data.title'}}
+      @sections={{model.sections}}
+      @changeLocale={{action "changeLocale"}}
+    />
+
+    <h2>How to use this guide</h2>
+    <p>
+      This guide is for groups of coders who wish to unify their ember programming styles.
+      This in turn will ease code readability and the speed up development and debugging processes.
+      Although there are detailed explanations of each pattern on their respective page,
+      please look at the code in the repo to understand what is happening.
+    </p>
+    <p>
+      The Patterns and Anti-Pattern sections are meant to be clear and concise examples of best and worst practices in regards to Ember development
+      The General Guidelines section is meant to give background and perspective for patterns as well as explain concepts that are not highly visible in code.
+    </p>
+  </div>
 
   {{#freestyle-section name='Visual Style' as |section|}}
 
@@ -26,6 +45,58 @@
         description='This component displays the color palette specified in freestyle/palette.json'
         }}
       {{/freestyle-usage}}
+
+    {{/section.subsection}}
+
+  {{/freestyle-section}}
+
+  {{#freestyle-section name='General' as |section|}}
+
+    {{#section.subsection name=(t "general.articles.use_pods")}}
+
+    {{/section.subsection}}
+
+    {{#section.subsection name=(t "general.articles.two_way_binding_does_not_scale")}}
+
+    {{/section.subsection}}
+
+    {{#section.subsection name=(t "general.articles.mixin_checklist.title")}}
+
+    {{/section.subsection}}
+
+    {{#section.subsection name=(t "general.articles.serializer_checklist.title")}}
+
+    {{/section.subsection}}
+
+    {{#section.subsection name=(t "general.articles.use_anglebrackets.title")}}
+
+    {{/section.subsection}}
+
+    {{#section.subsection name=(t "general.articles.use_models_right.title")}}
+
+    {{/section.subsection}}
+
+  {{/freestyle-section}}
+
+  {{#freestyle-section name='Patterns' as |section|}}
+
+    {{#section.subsection name='Typography'}}
+
+    {{/section.subsection}}
+
+    {{#section.subsection name='Color'}}
+
+    {{/section.subsection}}
+
+  {{/freestyle-section}}
+
+  {{#freestyle-section name='Anti Patterns' as |section|}}
+
+    {{#section.subsection name='Typography'}}
+
+    {{/section.subsection}}
+
+    {{#section.subsection name='Color'}}
 
     {{/section.subsection}}
 
